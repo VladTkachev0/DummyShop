@@ -58,15 +58,9 @@ dependencies {
     implementation ("com.squareup.okhttp3:okhttp:4.7.2")
     implementation ("com.squareup.picasso:picasso:2.8")
 
-
-    val glide_version = "4.12.0"
-    implementation ("com.github.bumptech.glide:glide:${glide_version}")
-    kapt ("com.github.bumptech.glide:compiler:${glide_version}")
-
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
-
 
     implementation ("io.insert-koin:koin-core:3.1.2")
     implementation ("io.insert-koin:koin-android:3.1.2")

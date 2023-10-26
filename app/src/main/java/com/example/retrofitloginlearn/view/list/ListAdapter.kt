@@ -3,15 +3,12 @@ package com.example.retrofitloginlearn.view.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.ListFragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.retrofitloginlearn.R
 import com.example.retrofitloginlearn.databinding.ItemBinding
 import com.example.retrofitloginlearn.model.ProductX
 import com.example.retrofitloginlearn.model.Products
-import com.example.retrofitloginlearn.view.login.LoginFragmentDirections
 import com.squareup.picasso.Picasso
 
 
