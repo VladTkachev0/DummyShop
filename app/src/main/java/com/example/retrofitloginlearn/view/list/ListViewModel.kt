@@ -8,8 +8,7 @@ import com.example.retrofitloginlearn.repository.Repository
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
-class ListViewModel: ViewModel() {
-    var repo = Repository()
+class ListViewModel(private val repo: Repository): ViewModel() {
     val productList: MutableLiveData<Response<Products>> = MutableLiveData()
 
     fun getProduct(){

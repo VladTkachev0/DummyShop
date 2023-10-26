@@ -10,8 +10,8 @@ import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import retrofit2.Response
 
-class LoginViewModel: ViewModel() {
-    var repo = Repository()
+class LoginViewModel( private val repo: Repository): ViewModel() {
+
     val userList: MutableLiveData<User> = MutableLiveData()
     val error: MutableLiveData<String> = MutableLiveData()
     fun getUser(authRequest: AuthRequest){
@@ -24,8 +24,7 @@ class LoginViewModel: ViewModel() {
             } catch (e: Exception) {
                 error.postValue("Неожиданная ошибка: ${e.message}")
             }
-
-
         }
     }
+
 }

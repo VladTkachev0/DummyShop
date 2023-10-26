@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.retrofitloginlearn.R
 import com.example.retrofitloginlearn.databinding.FragmentListBinding
 import com.example.retrofitloginlearn.databinding.FragmentLoginBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class ListFragment : Fragment() {
@@ -18,6 +19,7 @@ class ListFragment : Fragment() {
     private lateinit var _binding: FragmentListBinding
     private val binding get() = _binding!!
     private val adapter = ListAdapter()
+    private val listViewModel: ListViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,10 +33,9 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
         binding.rcView.adapter = adapter
-        viewModel.getProduct()
-        viewModel.productList.observe(viewLifecycleOwner) { list ->
+        listViewModel.getProduct()
+        listViewModel.productList.observe(viewLifecycleOwner) { list ->
             list.body()?.let { adapter.setList(it) }
         }
 
@@ -45,8 +46,8 @@ class ListFragment : Fragment() {
 
             override fun onQueryTextChange(name: String?): Boolean {
                 if (name != null) {
-                    viewModel.searchProduct(name)
-                    viewModel.productList.observe(viewLifecycleOwner){ list ->
+                    listViewModel.searchProduct(name)
+                    listViewModel.productList.observe(viewLifecycleOwner){ list ->
                         list.body()?.let { adapter.setList(it) }
                     }
                 }

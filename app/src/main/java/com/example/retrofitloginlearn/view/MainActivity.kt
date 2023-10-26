@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity(), LoginFragment.OnFragmentInteractionLis
         toggle.syncState()
 
     }
-
     override fun onLoginSuccess(firstName: String, lastName: String, imageUrl: String) {
         val navView: NavigationView = binding.navView
         val headerView: View = navView.getHeaderView(0)
